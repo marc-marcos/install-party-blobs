@@ -3,6 +3,7 @@ import painting_requests
 import random
 from ball import Ball
 from painting_constants import *
+import time
 
 pygame.init()
 
@@ -20,6 +21,8 @@ clock = pygame.time.Clock()
 
 pygame.font.init()
 
+last_checked = None
+
 while is_running:
     
     for event in pygame.event.get():
@@ -27,13 +30,16 @@ while is_running:
             is_running = False
     
     # checking if there are new circles and drawing them
-    usuarios = painting_requests.get_users_names()
 
-    for usuario in usuarios:
+    if (last_checked == None or pygame.time.get_ticks() - last_checked >= 1000):
+        usuarios = painting_requests.get_users_names()
+        last_checked = pygame.time.get_ticks()
+
+    for (usuario, os) in usuarios:
         if usuario in usuarios_shapes:
             pass
         else:
-            usuarios_shapes[usuario] = Ball(usuario)
+            usuarios_shapes[usuario] = Ball(usuario, os)
     
     window_surface.blit(background, (0, 0))
 

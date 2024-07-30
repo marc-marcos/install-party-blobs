@@ -7,7 +7,8 @@ def create_database():
     c.execute('''
     CREATE TABLE IF NOT EXISTS users (
         Id INTEGER PRIMARY KEY AUTOINCREMENT,
-        Name TEXT NOT NULL
+        Name TEXT NOT NULL,
+        Os TEXT NOT NULL
     )
     ''')
     conn.commit()

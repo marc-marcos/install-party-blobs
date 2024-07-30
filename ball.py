@@ -4,13 +4,28 @@ import random
 from painting_constants import *
 
 class Ball:
-    def __init__(self, username):
+    def __init__(self, username, os):
         self.username = username
-        self.color = Color('#ffffff')
+        self.os = os
         self.radius = BALL_RADIUS 
         self.pos = [random.randint(0, 800), random.randint(0, 800)]
         self.speed = [random.randint(-10, 10), random.randint(-10, 10)]
         self.last_calculated_pos = pygame.time.get_ticks()
+
+        if (os == 'Arch'):
+            self.color = Color('#1793d1')
+
+        elif (os == 'Ubuntu'):
+            self.color = Color('#e95420')
+        
+        elif (os == 'Fedora'):
+            self.color = Color('#3c6eb4')
+
+        elif (os == 'Manjaro'):
+            self.color = Color('#34be5b')
+
+        else:
+            self.color = Color('#ffffff')
     
     def draw_itself(self, window_surface):
         pygame.draw.circle(window_surface, self.color, self.pos, self.radius)

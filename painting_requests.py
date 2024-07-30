@@ -13,6 +13,6 @@ def get_users_names():
     usuarios = []
 
     for usuario in json_response:
-        usuarios.append(usuario[1]) 
+        usuarios.append((usuario[1], usuario[2])) 
     
     return usuarios
