@@ -8,7 +8,7 @@ class Ball:
         self.username = username
         self.os = os
         self.radius = BALL_RADIUS 
-        self.pos = [random.randint(0, 800), random.randint(0, 800)]
+        self.pos = [random.randint(BALL_RADIUS+20, SCREEN_WIDTH-BALL_RADIUS-20), random.randint(BALL_RADIUS+20, SCREEN_HEIGHT-BALL_RADIUS-20)]
         self.speed = [random.randint(-10, 10), random.randint(-10, 10)]
         self.last_calculated_pos = pygame.time.get_ticks()
 

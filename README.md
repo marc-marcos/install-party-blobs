@@ -30,7 +30,7 @@ Ahora ya se pueden hacer las requests siguientes a la IP donde esté alojada la 
 - **L**: Activa y desactiva la leyenda de las distribuciones.
 
 ## Todo
-- [ ] Hacer que las bolas spawneen un poco más lejos de los margenes. 
+- [X] Hacer que las bolas spawneen un poco más lejos de los margenes. 
 - [ ] Que se pueda cambiar el tamaño de las bolas y de la fuente desde la misma visualización.
 - [ ] Que se pueda desactivar los nombres que sean numeros y que los otros sigan saliendo.
 - [X] Que se pueda activar y desactivar la leyenda de distribuciones.
