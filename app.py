@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import sqlite3
 from flask import g
+import random
 
 app = Flask(__name__)
 
@@ -19,14 +20,21 @@ def create_user():
     try:
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
-        # Use parameterized query to prevent SQL injection
-        c.execute("INSERT INTO users (Name, Os) VALUES (?, ?)", (request.form['username'], request.form['os']))
+
+        if request.form['username'] == "": 
+            c.execute("SELECT COUNT(*) FROM users")
+            count = c.fetchone()[0]
+
+            username = str(count)
+
+        else:
+            username = request.form['username']
+
+        c.execute("INSERT INTO users (Name, Os) VALUES (?, ?)", (username, request.form['os']))
         conn.commit()
     except sqlite3.Error as e:
-        # Return an error message if something goes wrong
         return jsonify({"code": 500, "message": str(e)})
     finally:
-        # Ensure the connection is closed
         conn.close()
 
     return jsonify({"code": 200, "message": "User created successfully"})
