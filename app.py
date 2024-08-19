@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flaskcors import CORS
+from flask_cors import CORS
 import sqlite3
 from flask import g
 import random
