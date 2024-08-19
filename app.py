@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flaskcors import CORS
 import sqlite3
 from flask import g
 import random
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello_world():
