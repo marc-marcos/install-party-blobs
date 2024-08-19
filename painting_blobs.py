@@ -1,6 +1,5 @@
 import pygame
 import painting_requests
-import random
 from ball import Ball
 from painting_constants import *
 import time
@@ -36,49 +35,37 @@ while is_running:
                 draw_legend = not draw_legend
     
     # checking if there are new circles and drawing them
-
-    if (last_checked == None or pygame.time.get_ticks() - last_checked >= 1000):
+    if last_checked is None or pygame.time.get_ticks() - last_checked >= 1000:
         usuarios = painting_requests.get_users_names()
         last_checked = pygame.time.get_ticks()
 
-    for (usuario, os) in usuarios:
-        if usuario in usuarios_shapes:
-            pass
-        else:
+    for usuario, os in usuarios:
+        if usuario not in usuarios_shapes:
             usuarios_shapes[usuario] = Ball(usuario, os)
     
     window_surface.blit(background, (0, 0))
 
-    # pygame.draw.circle(window_surface, pygame.Color('#ffffff'), (random.randint(0, 800), random.randint(0, 800)), random.randint(50, 100))
     for s in usuarios_shapes:
         usuarios_shapes[s].calculate_pos()
-
         usuarios_shapes[s].draw_itself(window_surface)
     
     # draw the legend
-
     if draw_legend:
-        '''
-        my_font = pygame.font.SysFont(None, 24)
-        img = my_font.render(self.username, True, pygame.Color('#ffffff'))
-        window_surface.blit(img, (self.pos[0], self.pos[1] + 2*BALL_RADIUS))
-        '''
         my_font = pygame.font.SysFont(None, 36)
-        img = my_font.render("Arch Linux", True, pygame.Color('#1793d1'))
-        window_surface.blit(img, (SCREEN_WIDTH - 175, SCREEN_HEIGHT - 200))
-
-        img = my_font.render("Ubuntu", True, pygame.Color('#e95420'))
-        window_surface.blit(img, (SCREEN_WIDTH - 175, SCREEN_HEIGHT - 170))
-
-        img = my_font.render("Fedora", True, pygame.Color('#3c6eb4'))
-        window_surface.blit(img, (SCREEN_WIDTH - 175, SCREEN_HEIGHT - 140))
-
-        img = my_font.render("Manjaro", True, pygame.Color('#34be5b'))
-        window_surface.blit(img, (SCREEN_WIDTH - 175, SCREEN_HEIGHT - 110))
-
-        img = my_font.render("Else", True, pygame.Color('#ffffff'))
-        window_surface.blit(img, (SCREEN_WIDTH - 175, SCREEN_HEIGHT - 80))
+        
+        os_legend = {
+            "Ubuntu": '#e95420',
+            "Manjaro": '#34be5b',
+            "Linux Mint": '#92B662',
+            "Arch Linux": '#1793d1',
+            "Else": '#ffffff',
+        }
+        
+        y_offset = 200
+        for os_name, color in os_legend.items():
+            img = my_font.render(os_name, True, pygame.Color(color))
+            window_surface.blit(img, (SCREEN_WIDTH - 175, SCREEN_HEIGHT - y_offset))
+            y_offset -= 30
 
     pygame.display.update()
-
     clock.tick(144)

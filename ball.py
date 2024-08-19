@@ -21,6 +21,9 @@ class Ball:
         elif (os == 'Fedora'):
             self.color = Color('#3c6eb4')
 
+        elif (os == 'Linux Mint'):
+            self.color = Color('#92b662')
+
         elif (os == 'Manjaro'):
             self.color = Color('#34be5b')
 
