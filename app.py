@@ -23,16 +23,18 @@ def create_user():
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
 
-        if request.form['username'] == "": 
+        data = request.json
+
+        if data['username'] == "": 
             c.execute("SELECT COUNT(*) FROM users")
             count = c.fetchone()[0]
 
             username = str(count)
 
         else:
-            username = request.form['username']
+            username = data['username']
 
-        c.execute("INSERT INTO users (Name, Os) VALUES (?, ?)", (username, request.form['os']))
+        c.execute("INSERT INTO users (Name, Os) VALUES (?, ?)", (username, data['os']))
         conn.commit()
     except sqlite3.Error as e:
         return jsonify({"code": 500, "message": str(e)})
