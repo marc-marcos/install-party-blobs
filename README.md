@@ -25,6 +25,14 @@ Ahora ya se pueden hacer las requests siguientes a la IP donde esté alojada la 
 
 - /create (método POST) en el cuerpo de la request: `{"username" : String, "os" : String}` **Para dejar el campo de username blanco hay que enviarlo como una string vacía "", siempre en cada request hay que enviar el campo de username aunque sea vacío**
 
+Los sistemas operativos que detecta el backend son:
+- Arch
+- Ubuntu
+- Fedora
+- Linux Mint
+- Manjaro
+- Todo lo demás color default.
+
 ### Atajos
 
 - **L**: Activa y desactiva la leyenda de las distribuciones.
