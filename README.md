@@ -55,3 +55,8 @@ Els sistemas operatius que detecta el backend son:
 
 ## Todo
 - [ ] Que el backend detecti Debian.
+
+## Authors
+
+- Frontend: [@paulsssp](https://github.com/paulsssp)
+- Backend and hosting: [@marc-marcos](https://github.com/marc-marcos)
