@@ -1,44 +1,57 @@
 # install-party-blobs
 
-## Configuración 
+## Fotos
+
+### Frontend per afegir instalacions
+
+![Foto Frontend](/readme-images/ejfrontend.png)
+
+### Visualització per al projector
+
+![Visualització al Projector](/readme-images/balls.gif)
+
+<hr>
+
+## Configuració
 
 - clonar el repo 
 - `cd install-party-blobs/`
-- `source venv/bin/activate`
+- `python -m venv venv`
 - `python -m pip install -r requirements.txt`
+- `pip install flask_cors`
 
-## Uso 
+## Ús
 
-### Crear la base de datos 
+### Crear la base de dades 
 
 - `python database_utils.py`
 
-### Encender la app de Flask
+### Encendre l'app de Flask
 
 - `flask run`
 
-### Encender la visualización
+### Encendre la visualizació
 
 - `python painting_blobs.py`
 
-Ahora ya se pueden hacer las requests siguientes a la IP donde esté alojada la app de flask.
+Ara ja es poden fer les requests següents a la IP on està allotjada l'app de Flask.
 
-- /create (método POST) en el cuerpo de la request: `{"username" : String, "os" : String}` **Para dejar el campo de username blanco hay que enviarlo como una string vacía "", siempre en cada request hay que enviar el campo de username aunque sea vacío**
+- /create (métode POST) en el cos de la request: `{"username" : String, "os" : String}` **Per deixar el camp de username blanc s'ha d'enviar com una string buida"", sempre en cada request s'ha d'enviar el campo de username tot i que sigui buit. En cas de que el camp d'username sigui buit es generarà un identificador incremental.**
+- / **Frontend pper fer les peticions des del mòbil**
+- /raw **Per aconseguir les dades en format JSON**
 
-Los sistemas operativos que detecta el backend son:
+Els sistemas operatius que detecta el backend son:
 - Arch
 - Ubuntu
 - Fedora
 - Linux Mint
 - Manjaro
-- Todo lo demás color default.
+- Debian
+- Tota la resta color default.
 
-### Atajos
+### Shortcut
 
-- **L**: Activa y desactiva la leyenda de las distribuciones.
+- **L**: Activa y desactiva la llegenda de les distribucions.
 
 ## Todo
-- [X] Hacer que las bolas spawneen un poco más lejos de los margenes. 
-- [ ] Que se pueda cambiar el tamaño de las bolas y de la fuente desde la misma visualización.
-- [ ] Que se pueda desactivar los nombres que sean numeros y que los otros sigan saliendo.
-- [X] Que se pueda activar y desactivar la leyenda de distribuciones.
+- [ ] Que el backend detecti Debian.
