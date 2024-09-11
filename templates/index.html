@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="icon" href="images/logo.png" type="image" >
+    <title>Linux Install Party Live</title>
+</head>
+<body>
+    <h1 id="home">Linux Install Party Live <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Image"></h1>
+
+    <section id="distros">
+        <!-- columna de distros y boton para añadir-->
+        <h2>Instal·lacions completades: <span id="total">0</span></h2>
+       
+        <ul>
+            <li>
+                <img src="{{ url_for('static', filename='images/linuxmint.png') }}" alt="Image">
+                Linux Mint: <span id="mint">0</span>
+                <button onclick="addMint()">Afegir estudiant</button>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/ubuntu.png') }}" alt="Image">
+                Ubuntu: <span id="ubuntu">0</span>
+                <button onclick="addUbuntu()">Afegir estudiant</button>
+
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/debian.png') }}" alt="Image">
+                Debian: <span id="debian">0</span>
+                <button onclick="addDebian()">Afegir estudiant</button>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/Manjaro.png') }}" alt="Image">
+                Manjaro: <span id="manjaro">0</span>
+                <button onclick="addManjaro()">Afegir estudiant</button>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/archlinux.png') }}" alt="Image">
+                Arch Linux: <span id="arch">0</span>
+                <button onclick="addArch()">Afegir estudiant</button>
+            </li>
+        </ul>
+    </section>
+    
+    <footer> Made with ❤️ and GNU &copy; 2024 LinuxUPC </footer>
+</body>
+</html>

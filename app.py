@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import sqlite3
 from flask import g
@@ -8,7 +8,11 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
-def hello_world():
+def main_page():
+    return render_template("index.html") 
+
+@app.route('/raw')
+def raw_data():
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
     c.execute('SELECT * FROM users')

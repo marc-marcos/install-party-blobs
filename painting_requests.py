@@ -7,7 +7,7 @@ print(x.json())
 '''
 
 def get_users_names():
-    response = requests.get('http://127.0.0.1:5000') 
+    response = requests.get('http://127.0.0.1:5000/raw') 
     json_response = response.json()
 
     usuarios = []
