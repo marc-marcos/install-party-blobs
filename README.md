@@ -2,7 +2,7 @@
 
 ## Fotos
 
-### Frontend per afegir instalacions
+### Frontend per afegir instal·lacions
 
 ![Foto Frontend](/readme-images/ejfrontend.png)
 
@@ -11,6 +11,12 @@
 ![Visualització al Projector](/readme-images/balls.gif)
 
 <hr>
+
+## About it 
+
+Install Party Blobs és un projecte per la Linux Install Party de l'associació de LinuxUPC. Tenim una web on els organitzadors des del seu mòbil comptabilitzaran el registre de quina distribució de Linux s'instal·la cada participant. Aquestes dades es veuran reflectides en el projector de l'aula en forma de pilotes simulant un salvapantalles com en la foto anterior.
+
+Durant tot l'esdeveniment es podrà veure en temps real la participació dels alumnes en el visualitzador.
 
 ## Configuració
 
