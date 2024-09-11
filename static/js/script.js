@@ -7,7 +7,7 @@ let sum = 0;
 let username;
 
 function sentToBackend(username, os) {
-    const url = 'http://127.0.0.1:5000/create';
+    const url = 'http://200.234.236.93:5000/create';
     const data = { "username": username, "os": os };
 
     fetch(url, {
