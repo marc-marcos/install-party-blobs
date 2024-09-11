@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/marcmarcos/Escritorio/Proyectos Actuales/install-party-blobs/venv/bin/python" "$0" "$@"
+'''exec' "/home/marcmarcos/Escritorio/Proyectos Actuales/install-party/install-party-blobs/venv/bin/python" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
