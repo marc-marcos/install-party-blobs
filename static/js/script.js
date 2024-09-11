@@ -7,7 +7,7 @@ let sum = 0;
 let username;
 
 function sentToBackend(username, os) {
-    const url = 'http://200.234.236.93:5000/create';
+    const url = 'http://127.0.0.1:5000/create';
     const data = { "username": username, "os": os };
 
     fetch(url, {
@@ -32,48 +32,43 @@ function sentToBackend(username, os) {
 }
 
 function addMint() {
-    if((username = prompt("Afegir nom de l'estudiant"))) {
-        ++countMint;
-        ++sum;
-        document.getElementById("mint").innerHTML = countMint;
-        document.getElementById("total").innerHTML = sum;
-        sentToBackend(username, "Linux Mint");
-    } 
+    prompt("Afegir nom de l'estudiant");
+    ++countMint;
+    ++sum;
+    document.getElementById("mint").innerHTML = countMint;
+    document.getElementById("total").innerHTML = sum;
+    sentToBackend(username, "Linux Mint");
 }
 function addUbuntu() {
-    if((username = prompt("Afegir nom de l'estudiant"))) {
-        ++countUbuntu;
-        ++sum;
-        document.getElementById("ubuntu").innerHTML = countUbuntu;
-        document.getElementById("total").innerHTML = sum;
-        sentToBackend(username, "Ubuntu");
-    }
+    prompt("Afegir nom de l'estudiant");
+    ++countUbuntu;
+    ++sum;
+    document.getElementById("ubuntu").innerHTML = countUbuntu;
+    document.getElementById("total").innerHTML = sum;
+    sentToBackend(username, "Ubuntu");
 }
 function addDebian() {
-    if((username = prompt("Afegir nom de l'estudiant"))) {
-        ++countDebian;
-        ++sum;
-        document.getElementById("debian").innerHTML = countDebian;
-        document.getElementById("total").innerHTML = sum;
-        sentToBackend(username, "Debian");
-    }
+    prompt("Afegir nom de l'estudiant");
+    ++countDebian;
+    ++sum;
+    document.getElementById("debian").innerHTML = countDebian;
+    document.getElementById("total").innerHTML = sum;
+    sentToBackend(username, "Debian");
 }
 function addManjaro() {
-    if((username = prompt("Afegir nom de l'estudiant"))) {
-        ++countManjaro;
-        ++sum;
-        document.getElementById("manjaro").innerHTML = countManjaro;
-        document.getElementById("total").innerHTML = sum;
-        sentToBackend(username, "Manjaro");
-    }
+    prompt("Afegir nom de l'estudiant");
+    ++countManjaro;
+    ++sum;
+    document.getElementById("manjaro").innerHTML = countManjaro;
+    document.getElementById("total").innerHTML = sum;
+    sentToBackend(username, "Manjaro");
 }
 function addArch() {
-    if((username = prompt("Afegir nom de l'estudiant"))) {
-        ++countArch;
-        ++sum;
-        document.getElementById("arch").innerHTML = countArch;
-        document.getElementById("total").innerHTML = sum;
-        sentToBackend(username, "Arch");
-    }
+    prompt("Afegir nom de l'estudiant");
+    ++countArch;
+    ++sum;
+    document.getElementById("arch").innerHTML = countArch;
+    document.getElementById("total").innerHTML = sum;
+    sentToBackend(username, "Arch");
 }
 
