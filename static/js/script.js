@@ -7,6 +7,7 @@ let sum = 0;
 let username;
 
 function sentToBackend(username, os) {
+    // const url = 'http://200.234.236.93:5000/create';
     const url = 'http://127.0.0.1:5000/create';
     const data = { "username": username, "os": os };
 
@@ -32,7 +33,13 @@ function sentToBackend(username, os) {
 }
 
 function addMint() {
-    prompt("Afegir nom de l'estudiant");
+    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    }
+
+    else {
+      username = "";
+    }
+
     ++countMint;
     ++sum;
     document.getElementById("mint").innerHTML = countMint;
@@ -40,7 +47,13 @@ function addMint() {
     sentToBackend(username, "Linux Mint");
 }
 function addUbuntu() {
-    prompt("Afegir nom de l'estudiant");
+    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    }
+
+    else {
+      username = "";
+    }
+
     ++countUbuntu;
     ++sum;
     document.getElementById("ubuntu").innerHTML = countUbuntu;
@@ -48,7 +61,13 @@ function addUbuntu() {
     sentToBackend(username, "Ubuntu");
 }
 function addDebian() {
-    prompt("Afegir nom de l'estudiant");
+    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    }
+
+    else {
+      username = "";
+    }
+
     ++countDebian;
     ++sum;
     document.getElementById("debian").innerHTML = countDebian;
@@ -56,7 +75,13 @@ function addDebian() {
     sentToBackend(username, "Debian");
 }
 function addManjaro() {
-    prompt("Afegir nom de l'estudiant");
+    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    }
+
+    else {
+      username = "";
+    }
+
     ++countManjaro;
     ++sum;
     document.getElementById("manjaro").innerHTML = countManjaro;
@@ -64,7 +89,13 @@ function addManjaro() {
     sentToBackend(username, "Manjaro");
 }
 function addArch() {
-    prompt("Afegir nom de l'estudiant");
+    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    }
+
+    else {
+      username = "";
+    }
+
     ++countArch;
     ++sum;
     document.getElementById("arch").innerHTML = countArch;
