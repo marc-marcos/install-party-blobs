@@ -7,38 +7,43 @@ import random
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/')
-def main_page():
-    return render_template("index.html") 
 
-@app.route('/raw')
+@app.route("/")
+def main_page():
+    return render_template("index.html")
+
+
+@app.route("/raw")
 def raw_data():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect("database.db")
     c = conn.cursor()
-    c.execute('SELECT * FROM users')
+    c.execute("SELECT * FROM users")
     users = c.fetchall()
     conn.close()
 
     return users
 
-@app.route("/create", methods=['POST'])
+
+@app.route("/create", methods=["POST"])
 def create_user():
     try:
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect("database.db")
         c = conn.cursor()
 
         data = request.json
 
-        if data['username'] == "": 
+        print(data)
+
+        if data["username"] == "":
             c.execute("SELECT COUNT(*) FROM users")
             count = c.fetchone()[0]
 
             username = str(count)
 
         else:
-            username = data['username']
+            username = data["username"]
 
-        c.execute("INSERT INTO users (Name, Os) VALUES (?, ?)", (username, data['os']))
+        c.execute("INSERT INTO users (Name, Os) VALUES (?, ?)", (username, data["os"]))
         conn.commit()
     except sqlite3.Error as e:
         return jsonify({"code": 500, "message": str(e)})
@@ -47,9 +52,10 @@ def create_user():
 
     return jsonify({"code": 200, "message": "User created successfully"})
 
+
 @app.route("/deletedatabase")
 def delete_database():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect("database.db")
     c = conn.cursor()
     c.execute("DELETE FROM users")
     conn.commit()

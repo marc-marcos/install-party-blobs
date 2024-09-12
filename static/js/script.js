@@ -33,7 +33,7 @@ function sentToBackend(username, os) {
 }
 
 function addMint() {
-    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    if ((username = prompt("Afegir nom de l'estudiant"))) {
     }
 
     else {
@@ -47,7 +47,7 @@ function addMint() {
     sentToBackend(username, "Linux Mint");
 }
 function addUbuntu() {
-    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    if ((username = prompt("Afegir nom de l'estudiant"))) {
     }
 
     else {
@@ -61,7 +61,7 @@ function addUbuntu() {
     sentToBackend(username, "Ubuntu");
 }
 function addDebian() {
-    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    if ((username = prompt("Afegir nom de l'estudiant"))) {
     }
 
     else {
@@ -75,7 +75,7 @@ function addDebian() {
     sentToBackend(username, "Debian");
 }
 function addManjaro() {
-    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    if ((username = prompt("Afegir nom de l'estudiant"))) {
     }
 
     else {
@@ -89,7 +89,7 @@ function addManjaro() {
     sentToBackend(username, "Manjaro");
 }
 function addArch() {
-    if ((username == prompt("Afegir nom de l'estudiant"))) {
+    if ((username = prompt("Afegir nom de l'estudiant"))) {
     }
 
     else {
